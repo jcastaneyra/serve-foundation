@@ -1,53 +1,52 @@
 !!!
-/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
-/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
-/[if IE 7] <html class="no-js lt-ie9 lt-ie8" lang="en">
-/[if IE 8] <html class="no-js lt-ie9" lang="en">
+/ [if IE 8] <html class="no-js lt-ie9" lang="en">
 / [if gt IE 8]><!
 %html.no-js{:lang => "en"}
   / <![endif]
   %head
     %meta{:charset => "utf-8"}/
+    %title Welcome to Foundation
+
     / Set the viewport width to device width for mobile
     %meta{:content => "width=device-width", :name => "viewport"}/
-    %title Welcome to Foundation
+
     / Included CSS Files
+    = stylesheet_link_tag "normalize"
     = stylesheet_link_tag "app"
-    = javascript_include_tag "foundation/modernizr.foundation"
-    / IE Fix for HTML5 Tags
-    /[if lt IE 9]
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+    = javascript_include_tag "vendor/custom.modernizr"
+
   %body
     .row
-      .twelve.columns
+      .large-12.columns
         %h2 Welcome to Foundation
-        %p This is version 3.2.5.
+        %p This is version 4.0.0
         %hr/
     .row
-      .eight.columns
+      .large-8.columns
         %h3 The Grid
         / Grid Example
         .row
-          .twelve.columns
+          .large-12.columns
             .panel
-              %p This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
+              %p This is a large-12 column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
         .row
-          .six.columns
+          .large-6.columns
             .panel
-              %p Six columns
-          .six.columns
+              %p large-6 columns
+          .large-6.columns
             .panel
-              %p Six columns
+              %p large-6 columns
         .row
-          .four.columns
+          .large-4.columns
             .panel
-              %p Four columns
-          .four.columns
+              %p large-4 columns
+          .large-4.columns
             .panel
-              %p Four columns
-          .four.columns
+              %p large-4 columns
+          .large-4.columns
             .panel
-              %p Four columns
+              %p large-4 columns
         %h3 Tabs
         %dl.tabs
           %dd.active
@@ -62,21 +61,21 @@
           %li#simple3Tab This is simple tab 3's content. It's, you know...okay.
         %h3 Buttons
         .row
-          .six.columns
+          .large-6.columns
             %p
               %a.small.button{:href => "#"} Small Button
             %p
               %a.button{:href => "#"} Medium Button
             %p
               %a.large.button{:href => "#"} Large Button
-          .six.columns
+          .large-6.columns
             %p
               %a.small.alert.button{:href => "#"} Small Alert Button
             %p
               %a.success.button{:href => "#"} Medium Success Button
             %p
               %a.large.secondary.button{:href => "#"} Large Secondary Button
-      .four.columns
+      .large-4.columns
         %h4 Getting Started
         %p We're stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.
         %h4 Other Resources
@@ -98,19 +97,13 @@
               %br/
             us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).
     / Included JS Files (Uncompressed)
-    = javascript_include_tag "foundation/jquery",
-                             "foundation/jquery.foundation.accordion",
-                             "foundation/jquery.foundation.alerts",
-                             "foundation/jquery.foundation.buttons",
-                             "foundation/jquery.foundation.forms",
-                             "foundation/jquery.foundation.mediaQueryToggle",
-                             "foundation/jquery.foundation.navigation",
-                             "foundation/jquery.foundation.orbit",
-                             "foundation/jquery.foundation.reveal",
-                             "foundation/jquery.foundation.tabs",
-                             "foundation/jquery.foundation.tooltips",
-                             "foundation/jquery.foundation.topbar",
-                             "foundation/jquery.placeholder"
+    :javascript
+      document.write('<script src=' +
+      ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
+      '.js><\/script>')
+
+    - Dir.glob("public/javascripts/foundation/**.js").each do |js|
+      = javascript_include_tag "foundation/#{File.basename(js)}"
 
     / Application Javascript, safe to override
     = javascript_include_tag "foundation/app"
