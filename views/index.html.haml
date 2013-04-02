@@ -1,26 +1,20 @@
 !!!
-/ [if IE 8] <html class="no-js lt-ie9" lang="en">
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
 / [if gt IE 8]><!
 %html.no-js{:lang => "en"}
   / <![endif]
   %head
     %meta{:charset => "utf-8"}/
-    %title Welcome to Foundation
-
-    / Set the viewport width to device width for mobile
     %meta{:content => "width=device-width", :name => "viewport"}/
-
-    / Included CSS Files
-    = stylesheet_link_tag "normalize"
-    = stylesheet_link_tag "app"
-
-    = javascript_include_tag "vendor/custom.modernizr"
-
+    %title Foundation 4
+    %link{:href => "stylesheets/normalize.css", :rel => "stylesheet"}/
+    %link{:href => "stylesheets/app.css", :rel => "stylesheet"}/
+    %script{:src => "javascripts/vendor/custom.modernizr.js"}
   %body
     .row
       .large-12.columns
         %h2 Welcome to Foundation
-        %p This is version 4.0.0
+        %p This is version 4.0.9.
         %hr/
     .row
       .large-8.columns
@@ -29,36 +23,24 @@
         .row
           .large-12.columns
             .panel
-              %p This is a large-12 column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
+              %p This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
         .row
           .large-6.columns
             .panel
-              %p large-6 columns
+              %p Six columns
           .large-6.columns
             .panel
-              %p large-6 columns
+              %p Six columns
         .row
           .large-4.columns
             .panel
-              %p large-4 columns
+              %p Four columns
           .large-4.columns
             .panel
-              %p large-4 columns
+              %p Four columns
           .large-4.columns
             .panel
-              %p large-4 columns
-        %h3 Tabs
-        %dl.tabs
-          %dd.active
-            %a{:href => "#simple1"} Simple Tab 1
-          %dd
-            %a{:href => "#simple2"} Simple Tab 2
-          %dd
-            %a{:href => "#simple3"} Simple Tab 3
-        %ul.tabs-content
-          %li#simple1Tab.active This is simple tab 1's content. Pretty neat, huh?
-          %li#simple2Tab This is simple tab 2's content. Now you see it!
-          %li#simple3Tab This is simple tab 3's content. It's, you know...okay.
+              %p Four columns
         %h3 Buttons
         .row
           .large-6.columns
@@ -96,15 +78,23 @@
             = succeed "Ping" do
               %br/
             us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).
-    / Included JS Files (Uncompressed)
     :javascript
       document.write('<script src=' +
       ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
       '.js><\/script>')
-
-    - Dir.glob("public/javascripts/foundation/**.js").each do |js|
-      = javascript_include_tag "foundation/#{File.basename(js)}"
-
-    / Application Javascript, safe to override
-    = javascript_include_tag "foundation/app"
-
+    %script{:src => "javascripts/foundation/foundation.js"}
+    %script{:src => "javascripts/foundation/foundation.alerts.js"}
+    %script{:src => "javascripts/foundation/foundation.clearing.js"}
+    %script{:src => "javascripts/foundation/foundation.cookie.js"}
+    %script{:src => "javascripts/foundation/foundation.dropdown.js"}
+    %script{:src => "javascripts/foundation/foundation.forms.js"}
+    %script{:src => "javascripts/foundation/foundation.joyride.js"}
+    %script{:src => "javascripts/foundation/foundation.magellan.js"}
+    %script{:src => "javascripts/foundation/foundation.orbit.js"}
+    %script{:src => "javascripts/foundation/foundation.placeholder.js"}
+    %script{:src => "javascripts/foundation/foundation.reveal.js"}
+    %script{:src => "javascripts/foundation/foundation.section.js"}
+    %script{:src => "javascripts/foundation/foundation.tooltips.js"}
+    %script{:src => "javascripts/foundation/foundation.topbar.js"}
+    :javascript
+      $(document).foundation();
