@@ -7,7 +7,7 @@ gem 'serve', '1.5.2'
 # Use Compass and Sass
 gem 'compass'
 gem 'sass', '3.2.7'
-gem 'zurb-foundation', '4.1.1'
+gem 'zurb-foundation', '4.1.2'
 
 # Markdown and Textile
 # gem 'rdiscount' # Markdown
@@ -15,7 +15,7 @@ gem 'zurb-foundation', '4.1.1'
 
 # Other templating languages
 # gem 'erubis'
-gem 'haml', '4.0.1'
+gem 'haml', '4.0.2'
 # gem 'slim'
 # gem 'radius'
 # gem 'less'
