@@ -7,7 +7,7 @@ gem 'serve', '1.5.2'
 # Use Compass and Sass
 gem 'compass'
 gem 'sass', '3.2.7'
-gem 'zurb-foundation', '4.1.2'
+gem 'zurb-foundation', '4.1.6'
 
 # Markdown and Textile
 # gem 'rdiscount' # Markdown
