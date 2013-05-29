@@ -44,5 +44,5 @@ group :development do
 
   gem 'rake'
   gem 'html2haml'
-  # gem 'powder'
+  gem 'powder'
 end
