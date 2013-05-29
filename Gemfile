@@ -27,6 +27,21 @@ gem 'haml', '4.0.2'
 gem 'thin'
 
 group :development do
+
+  # live reloading
+  gem 'guard-compass'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'yajl-ruby'
+
+  # comment these if you are not on OSX
+  gem 'rb-fsevent'
+  gem 'terminal-notifier-guard'
+
+  # optional: compress images
+  # gem 'smusher'
+  # gem 'guard-shell'
+
   gem 'rake'
   gem 'html2haml'
   # gem 'powder'
