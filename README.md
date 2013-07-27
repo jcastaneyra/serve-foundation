@@ -89,7 +89,7 @@ directory where you would like your HTML and CSS generated.
 
 Upgrading ZURB Foundation
 -------------------------
-If, for some reason, you feel the need to update de bundled Foundation version (say: I forget to upgrade the gem when a new version comes out :) follow these steps:
+If, for some reason, you feel the need to update the bundled Foundation version (say: I forget to upgrade the gem when a new version comes out :) follow these steps:
 
 - bump the gem version for 'zurb-foundation' in `Gemfile`
 - run `bundle install` to install the new version (and all dependencies)
