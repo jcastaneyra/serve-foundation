@@ -95,6 +95,9 @@ If, for some reason, you feel the need to update the bundled Foundation version 
 - run `bundle install` to install the new version (and all dependencies)
 - run `rake upgrade` to update the files in the public, sass and views folders (beware: if you've edited any of the files, you'll most probably lose your edits. The command is intended to be run on a clean repository clone).
 
+Deploy to Heroku
+----------------
+If everything is setup correctly, you only need to run `heroku create app-name` and `git push heroku master`
 
 Learning More
 -------------

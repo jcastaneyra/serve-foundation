@@ -6,7 +6,7 @@ gem 'serve', '1.5.2'
 
 # Use Compass and Sass
 gem 'compass'
-gem 'sass', '3.2.11'
+gem 'sass', '3.2.10'
 gem 'zurb-foundation', '4.3.2'
 
 # Markdown and Textile
@@ -45,4 +45,5 @@ group :development do
   gem 'rake'
   gem 'html2haml'
   gem 'powder'
+  gem 'heroku'
 end
