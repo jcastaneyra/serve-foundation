@@ -25,3 +25,4 @@ pkg
 .bundle
 
 public/stylesheets
+bower_components

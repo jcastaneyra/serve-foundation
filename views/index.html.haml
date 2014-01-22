@@ -6,96 +6,127 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
-    %title Foundation 4
+    %title Foundation 5
     %link{:href => "stylesheets/app.css", :rel => "stylesheet"}/
     %script{:src => "javascripts/vendor/custom.modernizr.js"}
   %body
     .row
       .large-12.columns
         %h2 Welcome to Foundation
-        %p This is version 4.3.2.
         %hr/
     .row
-      .large-8.columns
-        %h3 The Grid
+      .large-12.columns
+        .panel
+          %h3 We’re stoked you want to try Foundation!
+          %p To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.
+          %p Once you've exhausted the fun in this document, you should check out:
+          .row
+            .large-4.medium-4.columns
+              %p
+                %a{href: "http://foundation.zurb.com/docs"} Foundation Documentation
+                = succeed "Everything" do
+                  %br/
+            .large-4.medium-4.columns
+              %p
+                %a{href: "http://github.com/zurb/foundation"} Foundation on Github
+                = succeed "Latest" do
+                  %br/
+            .large-4.medium-4.columns
+              %p
+                %a{href: "http://twitter.com/foundationzurb"} @foundationzurb
+                = succeed "Ping" do
+                  %br/
+    .row
+      .large-8.medium-8.columns
+        %h5 Here’s your basic grid:
         / Grid Example
         .row
           .large-12.columns
-            .panel
-              %p This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
+            .callout.panel
+              %p
+                %strong This is a twelve column section in a row.
+                Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
         .row
-          .large-6.columns
-            .panel
+          .large-6.medium-6.columns
+            .callout.panel
               %p Six columns
-          .large-6.columns
-            .panel
+          .large-6.medium-6.columns
+            .callout.panel
               %p Six columns
         .row
-          .large-4.columns
-            .panel
+          .large-4.medium-4.small-4.columns
+            .callout.panel
               %p Four columns
-          .large-4.columns
-            .panel
+          .large-4.medium-4.small-4.columns
+            .callout.panel
               %p Four columns
-          .large-4.columns
-            .panel
+          .large-4.medium-4.small-4.columns
+            .callout.panel
               %p Four columns
-        %h3 Buttons
-        .row
-          .large-6.columns
-            %p
-              %a.small.button{:href => "#"} Small Button
-            %p
-              %a.button{:href => "#"} Medium Button
-            %p
-              %a.large.button{:href => "#"} Large Button
-          .large-6.columns
-            %p
-              %a.small.alert.button{:href => "#"} Small Alert Button
-            %p
-              %a.success.button{:href => "#"} Medium Success Button
-            %p
-              %a.large.secondary.button{:href => "#"} Large Secondary Button
-      .large-4.columns
-        %h4 Getting Started
-        %p We're stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.
-        %h4 Other Resources
-        %p Once you've exhausted the fun in this document, you should check out:
-        %ul.disc
-          %li
-            %a{:href => "http://foundation.zurb.com/docs"} Foundation Documentation
-            = succeed "Everything" do
-              %br/
-            you need to know about using the framework.
-          %li
-            %a{:href => "http://github.com/zurb/foundation"} Foundation on Github
-            = succeed "Latest" do
-              %br/
-            code, issue reports, feature requests and more.
-          %li
-            %a{:href => "http://twitter.com/foundationzurb"} @foundationzurb
-            = succeed "Ping" do
-              %br/
-            us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).
-    :javascript
-      document.write('<script src=' +
-      ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
-      '.js><\/script>')
-    %script{:src => "javascripts/foundation/foundation.js"}
-    %script{:src => "javascripts/foundation/foundation.abide.js"}
-    %script{:src => "javascripts/foundation/foundation.alerts.js"}
-    %script{:src => "javascripts/foundation/foundation.clearing.js"}
-    %script{:src => "javascripts/foundation/foundation.cookie.js"}
-    %script{:src => "javascripts/foundation/foundation.dropdown.js"}
-    %script{:src => "javascripts/foundation/foundation.forms.js"}
-    %script{:src => "javascripts/foundation/foundation.interchange.js"}
-    %script{:src => "javascripts/foundation/foundation.joyride.js"}
-    %script{:src => "javascripts/foundation/foundation.magellan.js"}
-    %script{:src => "javascripts/foundation/foundation.orbit.js"}
-    %script{:src => "javascripts/foundation/foundation.placeholder.js"}
-    %script{:src => "javascripts/foundation/foundation.reveal.js"}
-    %script{:src => "javascripts/foundation/foundation.section.js"}
-    %script{:src => "javascripts/foundation/foundation.tooltips.js"}
-    %script{:src => "javascripts/foundation/foundation.topbar.js"}
-    :javascript
-      $(document).foundation();
+        %hr/
+        %h5 We bet you’ll need a form somewhere:
+        %form
+          .row
+            .large-12.columns
+              %label Input Label
+              %input{placeholder: "large-12.columns", type: "text"}/
+          .row
+            .large-4.medium-4.columns
+              %label Input Label
+              %input{placeholder: "large-4.columns", type: "text"}/
+            .large-4.medium-4.columns
+              %label Input Label
+              %input{placeholder: "large-4.columns", type: "text"}/
+            .large-4.medium-4.columns
+              .row.collapse
+                %label Input Label
+                .small-9.columns
+                  %input{placeholder: "small-9.columns", type: "text"}/
+                .small-3.columns
+                  %span.postfix .com
+          .row
+            .large-12.columns
+              %label Select Box
+              %select
+                %option{value: "husker"} Husker
+                %option{value: "starbuck"} Starbuck
+                %option{value: "hotdog"} Hot Dog
+                %option{value: "apollo"} Apollo
+          .row
+            .large-6.medium-6.columns
+              %label Choose Your Favorite
+              %input#pokemonRed{name: "pokemon", type: "radio", value: "Red"}/
+              %label{for: "pokemonRed"} Radio 1
+              %input#pokemonBlue{name: "pokemon", type: "radio", value: "Blue"}/
+              %label{for: "pokemonBlue"} Radio 2
+            .large-6.medium-6.columns
+              %label Check these out
+              %input#checkbox1{type: "checkbox"}/
+              %label{for: "checkbox1"} Checkbox 1
+              %input#checkbox2{type: "checkbox"}/
+              %label{for: "checkbox2"} Checkbox 2
+          .row
+            .large-12.columns
+              %label Textarea Label
+              %textarea{placeholder: "small-12.columns"}
+      .large-4.medium-4.columns
+        %h5 Try one of these buttons:
+        %p
+          %a.small.button{href: "#"} Simple Button
+          %br/
+          %a.small.radius.button{href: "#"} Radius Button
+          %br/
+          %a.small.round.button{href: "#"} Round Button
+          %br/
+          %a.medium.success.button{href: "#"} Success Btn
+          %br/
+          %a.medium.alert.button{href: "#"} Alert Btn
+          %br/
+          %a.medium.secondary.button{href: "#"} Secondary Btn
+        .panel
+          %h5 So many components, girl!
+          %p A whole kitchen sink of goodies comes with Foundation. Checkout the docs to see them all, along with details on making them your own.
+          %a.small.button{href: "http://foundation.zurb.com/docs/"} Go to Foundation Docs
+    %script{src: "bower_components/jquery/jquery.js"}
+    %script{src: "bower_components/foundation/js/foundation.min.js"}
+    %script{src: "js/app.js"}

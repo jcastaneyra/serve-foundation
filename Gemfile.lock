@@ -108,8 +108,6 @@ GEM
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
     yajl-ruby (1.1.0)
-    zurb-foundation (4.3.2)
-      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -130,4 +128,3 @@ DEPENDENCIES
   terminal-notifier-guard
   thin
   yajl-ruby
-  zurb-foundation (= 4.3.2)
